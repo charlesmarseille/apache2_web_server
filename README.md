@@ -6,7 +6,7 @@ How to setup in windows 10:
 1. download rar file from 
 https://www.apachehaus.com/cgi-bin/download.plx?dli=ad0YwIGMBVzTEV0aldEZCpkVOpkVFVVcatGazR1Z
 
-2. extract files to specific folder (different path must be specified in DocumentRoot variable in step ******):
+2. extract files to specific folder (different path must be specified in DocumentRoot variable in step 9):
 C:/Apache24   
 
 4. Create Apache web server service (especially so windows can start it automatically):
