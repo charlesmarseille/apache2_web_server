@@ -16,7 +16,7 @@ cd C:/Apache24/bin/httpd.exe -k install -n "Apache web server"
 Confirm that install does not show errors (theywill be mentioned if any). If it does, fix it before moving on.
 
 5. Open windows 10 services:
-<windows key>+r -> services.msc
+windows_key+r -> services.msc
 
 Right-click Apache_web_server in list and click start.
 You can also choose if windows will start it automatically in this menu.
@@ -32,7 +32,7 @@ Check all boxes (domain, private, public), click next.
 Give the name "Apache web server", click finish.
 
 7. Add files and folders to file server:
-Go in C:/Apache24/htdocs/ and create a new directory. This new directory can be accessed from a browser at this.is.my.ip:<port>/<directory_name>
+Go in C:/Apache24/htdocs/ and create a new directory. This new directory can be accessed from a browser at this.is.my.ip:port_number/directory_name
   example: 75.135.42.13:2080/data  (port=2080, directory name=data)
   
 8. Create a port forwarding rule in the router (specific to each one...):
@@ -41,10 +41,9 @@ enter "ipconfig", check the ip address and copy it in a browser but change last 
 example: 192.168.0.34 -> 192.168.0.1
 
 find the port forwarding tab or button or menu and create a rule:
-name it, select <port> for the local port (default 80), select TCP or both protocols, select outbound port (default 80), select ip adress of your machine found just above (example 192.168.0.34) and save.
+name it, select port_number for the local port (default 80), select TCP or both protocols, select outbound port (default 80), select ip adress of your machine found just above (example 192.168.0.34) and save.
 
-(OPTIONAL) 9. To allow password protected folders and files (skip if not necessary), edit C:/Apache24/conf/httpd.conf
-modify this section:
+(OPTIONAL) 9. To allow password protected folders and files, edit C:/Apache24/conf/httpd.conf and modify this section:
 DocumentRoot "${SRVROOT}/htdocs"
 <Directory "${SRVROOT}/htdocs">
   AllowOverride None
