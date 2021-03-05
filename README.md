@@ -51,3 +51,16 @@ DocumentRoot "${SRVROOT}/htdocs"
 Replace None with All from above, save file.
 
 Restart Apache web server in services.msc.
+
+In the folder you want to be protected, create 2 text files and change names to .htaccess and .htpassword.
+Add in .htaccess:
+AuthName C:/Apache24/htdocs/data
+AuthUserFile C:/Apache24/htdocs/data/.htpassword
+AuthType Basic
+Require valid-user
+
+Add in .htpassword:
+username:{SHA}2+CP5wEowHe/VUEB/sp3dLThE4o=
+
+(where charlesmarseille is a username and {SHA}2+CP5wEowHe/VUEB/sp3dLThE4o= is a generated secure password from https://hostingcanada.org/htpasswd-generator/).
+Save both files and user can log in to server on this directory with username, password AND the URL. The protected folders are not visible in the file tree, they must be GET directly with the right URL. both these files must be present in each folder you want protected, but each subdirectories are also protected.
